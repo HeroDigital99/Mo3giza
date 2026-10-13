@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="معجزة"><meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#eaf6f3">
+  <meta name="description" content="السبحة الإلكترونية من معجزة — عداد هادئ قابل للتخصيص.">
+  <title>السبحة الإلكترونية | معجزة</title>
+  <link rel="icon" href="app-icon-192.png" type="image/png"><link rel="apple-touch-icon" href="app-icon-192.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="tasbih-page.css">
+</head>
+<body data-theme="mint" data-layout="classic">
+  <header class="tasbih-header">
+    <a class="brand" href="index.html" aria-label="العودة إلى الرئيسية"><span class="brand-wordmark"><img src="logo-wordmark.png" alt="معجزة"></span></a>
+    <div class="tasbih-header-actions"><button class="settings-trigger" id="settingsToggle" type="button" aria-haspopup="dialog" aria-controls="settingsDialog"><span aria-hidden="true">⚙</span><span>الإعدادات</span></button><a class="back-link" href="index.html">العودة للأذكار ←</a></div>
+  </header>
+  <main class="tasbih-shell">
+    <section class="intro"><div class="eyebrow">مساحة هادئة للذكر</div><h1>السبحة الإلكترونية</h1><p>اختَر التصميم واللون والخط والحجم الذي يريحك، ثم اذكر الله على مهل.</p></section>
+    <section class="tasbih-workspace">
+      <div class="tasbih-card">
+        <div class="tasbih-top"><span class="live-dot"></span><span>عداد التسبيح</span><button id="reset" class="text-button">إعادة ضبط ↺</button></div>
+        <select id="dhikr" class="dhikr-select" aria-label="اختيار الذكر"><option>سُبْحَانَ اللَّهِ</option><option>الْحَمْدُ لِلَّهِ</option><option>اللَّهُ أَكْبَرُ</option><option>أَسْتَغْفِرُ اللَّهَ وَأَتُوبُ إِلَيْهِ</option><option>سُبْحَانَ اللَّهِ وَبِحَمْدِهِ</option><option>لَا إِلَهَ إِلَّا اللَّهُ</option></select>
+        <div class="counter-area"><div class="counter-ring"><div class="counter-inner"><span id="count" aria-live="polite">0</span><small>تسبيحة</small></div></div><p id="message">عداد مستقل محفوظ على جهازك</p></div>
+        <button id="tap" class="tap-button"><span>اضغط للتسبيح</span><b>+</b></button>
+        <div class="tasbih-bottom"><button id="undo" class="secondary-button">تراجع عن آخر مرة</button><span>يمكنك الضغط على زر المسافة أيضاً</span></div>
+      </div>
+      <aside class="customizer" aria-label="تخصيص السبحة">
+        <div class="customizer-heading"><span class="spark">✧</span><div><h2>خصّص مساحتك</h2><p>الإعدادات محفوظة على هذا الجهاز.</p></div></div>
+        <fieldset><legend>التصميم</legend><div class="option-grid layouts"><button data-layout="classic" class="option active">كلاسيكي</button><button data-layout="minimal" class="option">هادئ</button><button data-layout="glass" class="option">زجاجي</button></div></fieldset>
+        <fieldset><legend>اللون</legend><div class="swatches"><button class="swatch mint active" data-theme="mint" aria-label="فيروزي"></button><button class="swatch sand" data-theme="sand" aria-label="رملي"></button><button class="swatch night" data-theme="night" aria-label="ليلي"></button><button class="swatch lavender" data-theme="lavender" aria-label="لافندر"></button></div></fieldset>
+        <label class="toggle"><input id="vibrate" type="checkbox" checked><span></span> اهتزاز خفيف عند الضغط</label>
+      </aside>
+    </section>
+    <section class="note"><strong>الذكر مش سباق</strong><p>العداد وسيلة مساعدة فقط، ولا يعني أي عدد افتراضي أنه واجب أو شرط لقبول الدعاء. نسأل الله أن يجعل هذا العمل خالصاً لوجهه الكريم ونافعاً للمسلمين.</p></section>
+  </main>
+  <dialog id="settingsDialog" class="settings-dialog" aria-labelledby="settingsTitle"><button id="closeSettings" class="dialog-close" type="button" aria-label="إغلاق">×</button><div class="eyebrow">مساحتك أنت</div><h2 id="settingsTitle">إعدادات معجزة</h2><p class="settings-intro">الاختيارات تُحفظ على هذا الجهاز وتعمل في الصفحة الرئيسية والسبحة.</p><div class="settings-grid"><label class="settings-field"><span>اسمك (اختياري)</span><input id="profileName" type="text" maxlength="40" placeholder="مثلاً: أحمد" autocomplete="name"></label><label class="settings-field"><span>عمرك (اختياري)</span><input id="profileAge" type="number" min="1" max="120" inputmode="numeric" placeholder="مثلاً: 28"></label></div><label class="settings-field full-field"><span>نوع الخط</span><select id="font" class="control-select" aria-label="اختيار الخط"><option value="Cairo">القاهرة</option><option value="Amiri">أميري</option><option value="Noto Naskh Arabic">نسخ عربي</option><option value="Noto Sans Arabic">نسخ حديث</option><option value="Tajawal">تجوال</option></select></label><label class="settings-field full-field"><span>حجم كل الواجهة <output id="sizeValue">100%</output></span><input id="fontSize" type="range" min="75" max="200" step="5" aria-label="حجم كل الواجهة"></label><button class="settings-save" id="saveSettings" type="button">حفظ الإعدادات</button></dialog>
+  <footer>© 2026 Hero Digital Company — جميع الحقوق محفوظة.<br><span>نسأل الله أن يجعل هذا العمل خالصاً لوجهه الكريم ونافعاً للمسلمين.</span></footer>
+  <script src="tasbih.js"></script>
+  <script>if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(()=>{});</script>
+</body>
+</html>

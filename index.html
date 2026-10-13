@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="معجزة"><meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#eaf6f3">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="description" content="معجزة — مساحة هادئة لأذكار الصباح والمساء والسبحة الإلكترونية وأدعية الرزق.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="معجزة | رفيقك للذكر والطمأنينة">
+  <meta property="og:description" content="أذكار وأدعية موثقة مع سبحة إلكترونية هادئة.">
+  
+  <link rel="icon" href="app-icon-192.png" type="image/png"><link rel="apple-touch-icon" href="app-icon-192.png">
+  <title>معجزة | رفيقك للذكر والطمأنينة</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <section id="splashScreen" class="splash-screen" aria-label="جاري تجهيز معجزة" aria-live="polite">
+    <div class="splash-aura"></div><div class="splash-content"><img src="logo-wordmark.png" alt="معجزة" class="splash-logo"><p>رفيقك للذكر والطمأنينة</p><div class="splash-loader" role="progressbar" aria-label="جاري التحميل" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="splashProgress"></span></div><span id="splashStatus">نهيئ مساحتك الهادئة...</span><button id="skipSplash" class="splash-skip" type="button">تخطي التحميل</button><small class="splash-copyright">© Hero Digital Company 2026</small></div>
+  </section>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar shell">
+    <a class="brand" href="#" data-jump="dashboard" aria-label="معجزة - الرئيسية">
+      <span class="brand-wordmark"><img src="logo-wordmark.png" alt="معجزة"></span>
+    </a>
+    <nav class="main-nav" aria-label="القائمة الرئيسية">
+      <button class="nav-link active" data-view="dashboard">الرئيسية</button>
+      <button class="nav-link" data-view="morning">أذكار الصباح</button><button class="nav-link" data-view="evening">أذكار المساء</button>
+      <button class="nav-link" data-view="rizq">أدعية الرزق</button>
+      <button class="nav-link" data-view="distress">تفريج الكرب والهم</button>
+      <button class="nav-link" data-view="protection">العين والحسد</button><button class="nav-link" data-view="self-dua">أدعية لنفسي</button><button class="nav-link" data-view="quranic-dua">أدعية قرآنية</button><a class="nav-link tasbih-nav-link" href="tasbih.html">السبحة الإلكترونية</a>
+    </nav>
+    <div class="header-actions"><button class="settings-trigger" id="settingsToggle" type="button" aria-haspopup="dialog" aria-controls="settingsDialog"><span aria-hidden="true">⚙</span><span>الإعدادات</span></button></div>
+  </header>
+
+  <main class="shell">
+    <section class="dashboard-panel dashboard-v2" id="dashboardSection" aria-labelledby="dashboardTitle">
+      <div class="dashboard-topline"><div class="dashboard-clock" aria-live="polite"><span>الوقت الآن</span><time id="liveClock">--:--:--</time><small id="liveClockHint">وقت مناسب للذكر</small></div><div class="dashboard-welcome"><span class="dashboard-kicker">مَسَاحَتُكَ فِي مَعْجِزَة</span><h2 id="dashboardTitle"><span id="dashboardGreeting">أهلاً بك</span> في وردك اليوم</h2><p id="dashboardDate">اجعل للذكر مساحة هادئة في يومك.</p><small id="profileSummary" class="profile-summary"></small></div><img class="dashboard-mini-logo" src="logo-wordmark.png" alt="معجزة"></div>
+      <div class="dashboard-feature-grid">
+        <article class="focus-card"><div class="focus-card-glow"></div><div class="focus-card-content"><span class="focus-label">وِرْدُكَ اليوم</span><h3 id="dashboardNextText">ابدأ من أذكار الصباح</h3><p>خطوة صغيرة الآن، وقلب أقرب إلى الطمأنينة.</p><button class="focus-action" data-jump="morning">ابدأ الورد <span>←</span></button></div><div class="focus-art" aria-hidden="true"><span>☾</span><b>ذِكر</b><i>✦</i></div></article>
+        <article class="progress-card"><div class="progress-card-head"><div><span class="focus-label">تقدّمك اليوم</span><strong id="dashboardProgressPercent">0%</strong></div><span class="progress-mark">✦</span></div><div class="progress-orbit"><div class="progress-orbit-inner"><strong id="dashboardProgressDone">0</strong><small>مكتمل</small></div></div><p><span id="dashboardProgressText">لم تبدأ وردك بعد</span><br><small>العداد وسيلة مساعدة، وليس سباقاً.</small></p><div id="dailyBreakdown" class="daily-breakdown" aria-live="polite"></div></article>
+      </div>
+      <div class="dashboard-quick-row"><button class="dashboard-quick" data-jump="morning"><span>☼</span><strong>أذكار الصباح</strong><small>ابدأ يومك</small></button><button class="dashboard-quick" data-jump="evening"><span>☾</span><strong>أذكار المساء</strong><small>اختم يومك</small></button><button class="dashboard-quick" data-jump="quranic-dua"><span>آ</span><strong>دعاء قرآني</strong><small>88 نصاً موثقاً</small></button><a class="dashboard-quick" href="tasbih.html"><span>◉</span><strong>السبحة</strong><small>تسبيح هادئ ↗</small></a></div>
+      <div class="dashboard-lower-grid"><article class="verse-card"><div class="verse-card-top"><span>إضاءة اليوم</span><b>اقرأ بتدبر</b></div><p id="dashboardVerseText">رَبِّ اشْرَحْ لِي صَدْرِي ۝ وَيَسِّرْ لِي أَمْرِي</p><small id="dashboardVerseSource">طه 25–26</small></article><article class="dashboard-stats-card"><div class="dashboard-stat"><strong id="dashboardStarted">0</strong><span>بدأت بها</span></div><div class="dashboard-stat"><strong id="dashboardCompleted">0</strong><span>مكتمل</span></div><div class="dashboard-stat"><strong id="dashboardTasbih">0</strong><span>تسبيحة</span></div><div class="dashboard-stat"><strong id="dashboardQuran">88</strong><span>دعاء قرآني</span></div></article></div>
+      <section class="analytics-panel" aria-labelledby="analyticsTitle"><div class="analytics-heading"><div><span class="focus-label">نظرة أعمق</span><h3 id="analyticsTitle">رحلتك مع الذكر</h3></div><div class="analytics-controls"><label for="statsDate">اختر يوماً</label><input id="statsDate" type="date" aria-label="اختيار يوم لعرض إحصائياته"><button id="resetDashboard" class="small-action" type="button">إعادة ضبط Dashboard</button><button id="showAllDays" class="small-action" type="button">عرض الكل</button><span class="analytics-period">آخر 7 أيام</span></div></div><div class="analytics-grid"><div class="weekly-chart historical-analytics"><div class="chart-head"><strong id="weeklyTotal">0</strong><span>تكراراً هذا الأسبوع</span></div><div id="weeklyBars" class="weekly-bars" aria-label="نشاط الذكر خلال آخر سبعة أيام"></div></div><div class="streak-card historical-analytics"><span class="streak-icon">✦</span><strong id="streakDays">0</strong><span>أيام متتالية</span><small id="streakMessage">ابدأ اليوم لصناعة عادتك الهادئة</small></div><div class="category-progress"><div class="category-progress-head"><strong>توزيع وردك</strong><span>حسب الأقسام</span></div><div id="categoryBars"></div></div><div class="day-detail" id="dayDetail" aria-live="polite"><div class="day-detail-head"><strong id="selectedDayLabel">إحصائيات اليوم</strong><span id="selectedDayHint">اختر تاريخاً من التقويم</span></div><div class="day-detail-stats"><span><b id="dayTotal">0</b><small>إجمالي التكرار</small></span><span><b id="dayDhikr">0</b><small>أذكار</small></span><span><b id="dayTasbih">0</b><small>تسبيحات</small></span></div><p id="dayCategories">لا يوجد نشاط مسجل لهذا اليوم.</p><div id="historyDays" class="history-days hidden"></div></div></div></section>
+      <section class="reminders-panel" aria-labelledby="remindersTitle"><div class="reminders-heading"><div><span class="focus-label">رفيقك في الموعد</span><h3 id="remindersTitle">التنبيهات والتذكيرات</h3><p>حدد وقت وردك، وسيذكرك معجزة بلطف.</p></div><button id="notificationPermission" class="small-action" type="button">تفعيل إشعارات الجهاز</button></div><form id="reminderForm" class="reminder-form"><label>الورد<select id="reminderType"><option value="morning">أذكار الصباح</option><option value="evening">أذكار المساء</option><option value="quranic-dua">أدعية قرآنية</option><option value="self-dua">أدعية لنفسي</option><option value="tasbih">السبحة الإلكترونية</option></select></label><label>الوقت<input id="reminderTime" type="time" required></label><fieldset><legend>التكرار</legend><label><input type="checkbox" name="reminderDay" value="0" checked>كل يوم</label><label><input type="checkbox" name="reminderDay" value="1">السبت</label><label><input type="checkbox" name="reminderDay" value="2">الأحد</label><label><input type="checkbox" name="reminderDay" value="3">الإثنين</label><label><input type="checkbox" name="reminderDay" value="4">الثلاثاء</label><label><input type="checkbox" name="reminderDay" value="5">الأربعاء</label><label><input type="checkbox" name="reminderDay" value="6">الخميس</label><label><input type="checkbox" name="reminderDay" value="7">الجمعة</label></fieldset><button class="focus-action reminder-submit" type="submit">إضافة تذكير</button></form><div id="remindersList" class="reminders-list" aria-live="polite"></div><small class="reminders-note">تعمل تنبيهات المتصفح عندما تسمح بالإشعارات. في النسخة الثابتة، يلزم إبقاء الموقع أو التطبيق مفتوحاً للتنبيه التلقائي.</small></section>
+      <div class="dashboard-section-title"><h3>استكشف مساحتك</h3><span>كل قسم له وقته ومعناه</span></div>
+      <div class="dashboard-links"><button class="dashboard-link" data-jump="self-dua"><span class="dashboard-link-icon blue">♡</span><span><strong>أدعية لنفسي</strong><small>ادعُ لنفسك بما ينفعك</small></span><b>←</b></button><button class="dashboard-link" data-jump="rizq"><span class="dashboard-link-icon sand">✦</span><span><strong>أدعية الرزق</strong><small>الرزق الحلال وقضاء الدين</small></span><b>←</b></button><button class="dashboard-link" data-jump="distress"><span class="dashboard-link-icon violet">♧</span><span><strong>تفريج الكرب</strong><small>للهم والصبر والتوكل</small></span><b>←</b></button><button class="dashboard-link" data-jump="protection"><span class="dashboard-link-icon mint">盾</span><span><strong>العين والحسد</strong><small>تحصين ورقية بلا تهويل</small></span><b>←</b></button></div>
+    </section>
+
+    <section class="hero" id="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> وَاذْكُرْ رَبَّكَ كَثِيراً</div>
+        <h1>اذكر الله<br><span>بقلبٍ مطمئن</span></h1>
+        <p>مساحة هادئة تجمع أذكارك وأدعيتك، لتكون أقرب إلى الذكر في تفاصيل يومك.</p>
+        <div class="hero-actions"><button class="btn btn-primary" data-jump="morning">ابدأ أذكار الصباح <span>←</span></button><button class="btn btn-quiet" data-jump="tasbih">افتح السبحة <span>↗</span></button></div>
+        <div class="trust-line"><span>✦</span> النصوص لها مصادر واضحة، وما لم يُتحقق من تخريجه موضّح بصراحة.</div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+        <div class="art-center"><span class="crescent">☾</span><span class="art-arabic">سُبْحَانَ<br>اللَّهِ وَبِحَمْدِهِ</span><span class="art-caption">ذكرٌ يطمئنّ به القلب</span></div>
+        <span class="spark spark-one">✧</span><span class="spark spark-two">✦</span><span class="spark spark-three">✧</span>
+      </div>
+    </section>
+
+
+
+    <section class="content-section" id="adhkarSection">
+      <div class="section-heading">
+        <div><div class="eyebrow">وِرْدُكَ اليومي</div><h2 id="sectionTitle">أذكار مختارة لك</h2><p id="sectionSubtitle">اقرأ على مهل، وتدبّر المعنى، ولا تجعل العداد ضغطاً عليك.</p></div>
+        <div class="search-wrap"><span>⌕</span><input id="searchInput" type="search" placeholder="ابحث عن ذكر أو دعاء..." aria-label="بحث في الأذكار"></div><div class="utility-actions"><button id="exportProgress" class="small-action">تصدير التقدم</button><label class="small-action import-label">استيراد التقدم<input id="importProgress" type="file" accept="application/json" hidden></label><button id="sharePage" class="small-action">مشاركة</button></div>
+      </div>
+      <div class="filters" id="filters">
+        <button class="filter" data-filter="morning">الصباح</button><button class="filter" data-filter="evening">المساء</button><button class="filter" data-filter="rizq">الرزق وقضاء الدَّين</button><button class="filter" data-filter="distress">تفريج الكرب والهم</button><button class="filter" data-filter="protection">العين والحسد</button><button class="filter" data-filter="self-dua">أدعية لنفسي</button><button class="filter" data-filter="quranic-dua">أدعية قرآنية</button><button class="filter" data-filter="daily">أذكار عامة</button>
+      </div>
+      <aside id="topicGuide" class="topic-guide hidden" aria-live="polite"></aside>
+      <div id="dhikrGrid" class="dhikr-grid" aria-live="polite"></div>
+      <div id="emptyState" class="empty-state hidden">مش لاقيين نتيجة. جرّب كلمة تانية.</div>
+    </section>
+
+    <section id="tasbihSection" class="tasbih-section hidden">
+      <div class="section-heading"><div><div class="eyebrow">مساحة للذكر</div><h2>السبحة الإلكترونية</h2><p>اختار ذكرك، وسبّح بهدوء. تقدمك محفوظ على نفس الجهاز.</p></div></div>
+      <div class="tasbih-layout">
+        <div class="tasbih-card">
+          <div class="tasbih-top"><span class="live-dot"></span><span>عداد التسبيح</span><button id="resetTasbih" class="text-btn">إعادة ضبط ↺</button></div>
+          <select id="tasbihDhikr" class="wide-select" aria-label="اختيار الذكر"><option value="سُبْحَانَ اللَّهِ">سُبْحَانَ اللَّهِ</option><option value="الْحَمْدُ لِلَّهِ">الْحَمْدُ لِلَّهِ</option><option value="اللَّهُ أَكْبَرُ">اللَّهُ أَكْبَرُ</option><option value="أَسْتَغْفِرُ اللَّهَ وَأَتُوبُ إِلَيْهِ">أَسْتَغْفِرُ اللَّهَ وَأَتُوبُ إِلَيْهِ</option><option value="سُبْحَانَ اللَّهِ وَبِحَمْدِهِ">سُبْحَانَ اللَّهِ وَبِحَمْدِهِ</option><option value="لَا إِلَهَ إِلَّا اللَّهُ">لَا إِلَهَ إِلَّا اللَّهُ</option></select>
+          <div class="tasbih-display"><div class="counter-ring"><div class="counter-inner"><span id="tasbihCount">0</span><small>تسبيحة</small></div></div></div>
+          <button class="tasbih-tap" id="tasbihTap"><span>اضغط للتسبيح</span><span class="tap-plus">+</span></button>
+          <div class="tasbih-bottom"><button id="undoTasbih" class="btn btn-quiet">تراجع عن آخر مرة</button><span id="tasbihMessage">على مهلك، خُد وقتك</span></div>
+        </div>
+        <aside class="tasbih-note"><span class="note-icon">✧</span><h3>الذكر مش سباق</h3><p>العداد وسيلة مساعدة فقط. يمكنك تغيير الذكر والعدد كما تحب، ولا يعني أي عدد افتراضي أنه واجب أو شرط لقبول الدعاء.</p><div class="note-divider"></div><p class="note-small">يُحفظ العداد محلياً على جهازك باستخدام المتصفح، ولا يحتاج إلى إنشاء حساب.</p></aside>
+      </div>
+    </section>
+
+    <section class="sources-note">
+      <span class="source-symbol">✓</span><div><strong>الأمانة في النص والمصدر</strong><p>المراجع المعروضة توجّهك للمصدر. بعض الأذكار تحتاج إلى استكمال تخريج الرواية المحددة قبل اعتماد حكمها أو فضيلتها للنشر النهائي؛ لذلك نوضّح ذلك بدلاً من اختلاق درجة صحة.</p></div>
+    </section>
+    <footer class="footer"><a class="brand footer-brand" href="#"><span class="brand-wordmark"><img src="logo-wordmark.png" alt="معجزة"></span></a><p>اللهم اجعل هذا العمل نافعاً وخالصاً لوجهك الكريم.</p><span class="footer-copy">© 2026 Hero Digital Company — جميع الحقوق محفوظة.<br>نسأل الله أن يجعل هذا العمل خالصاً لوجهه الكريم ونافعاً للمسلمين.</span></footer>
+  </main>
+
+  <dialog id="settingsDialog" class="settings-dialog" aria-labelledby="settingsTitle"><button id="closeSettings" class="dialog-close" type="button" aria-label="إغلاق">×</button><div class="eyebrow">مساحتك أنت</div><h2 id="settingsTitle">إعدادات معجزة</h2><p class="settings-intro">عدّل القراءة كما تريح عينيك. الاختيارات تُحفظ على هذا الجهاز وتعمل في الصفحة الرئيسية والسبحة.</p><div class="settings-grid"><label class="settings-field"><span>اسمك (اختياري)</span><input id="profileName" type="text" maxlength="40" placeholder="مثلاً: أحمد" autocomplete="name"></label><label class="settings-field"><span>عمرك (اختياري)</span><input id="profileAge" type="number" min="1" max="120" inputmode="numeric" placeholder="مثلاً: 28"></label></div><label class="settings-field full-field"><span>نوع الخط</span><select id="fontSelect" aria-label="اختيار الخط"><option value="Cairo">القاهرة</option><option value="Amiri">أميري</option><option value="Noto Naskh Arabic">نسخ عربي</option><option value="Noto Sans Arabic">نسخ حديث</option><option value="Tajawal">تجوال</option></select></label><label class="settings-field full-field"><span>حجم كل الواجهة <output id="globalFontSizeValue">100%</output></span><input id="globalFontSize" type="range" min="75" max="200" step="5" aria-label="حجم كل الواجهة"></label><div class="settings-row"><button class="theme-setting" id="themeToggle" type="button">◐ الوضع الليلي</button><span class="settings-hint">يمكنك تغيير المظهر وقتما تشاء</span></div><button class="settings-save" id="saveSettings" type="button">حفظ الإعدادات</button></dialog>
+  <dialog id="sourceDialog" class="source-dialog" aria-labelledby="dialogTitle"><button id="closeDialog" class="dialog-close" aria-label="إغلاق">×</button><div class="eyebrow">التوثيق والمصدر</div><h2 id="dialogTitle"></h2><div id="dialogBody"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <noscript><div class="noscript-note">لتشغيل معجزة، يرجى تفعيل JavaScript في المتصفح.</div></noscript>
+  <script src="app.js"></script>
+  <script>if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(()=>{});</script>
+</body>
+</html>
