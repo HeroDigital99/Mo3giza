@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#1d5948">
+  <meta name="description" content="أدعية الرزق وتفريج الكرب والتحصين والأدعية القرآنية من منصة معجزة.">
+  <meta name="version" content="v1.0.0">
+  <title>الأدعية | معجزة أذكار وقرآن</title>
+  <link rel="canonical" href="https://mo3giza.herodigitalcompany.workers.dev/duas.html">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="favicon-16.png" type="image/png" sizes="16x16">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preload" href="fonts/Cairo-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css?v=20261015-duas-page-1">
+  <link rel="stylesheet" href="duas-page.css?v=20261015-duas-page-1">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="معجزة | أذكار وقرآن">
+  <meta property="og:title" content="الأدعية | معجزة أذكار وقرآن">
+  <meta property="og:description" content="أدعية الرزق وتفريج الكرب والتحصين والأدعية القرآنية مع المصادر والتوثيق.">
+  <meta property="og:url" content="https://mo3giza.herodigitalcompany.workers.dev/duas.html">
+  <meta property="og:image" content="https://mo3giza.herodigitalcompany.workers.dev/app-icon-512.png">
+</head>
+<body class="duas-page">
+  <header class="duas-header shell">
+    <a class="brand" href="index.html" aria-label="العودة إلى معجزة"><span class="brand-wordmark"><img src="logo-wordmark.png" alt="معجزة"></span></a>
+    <a class="back-link" href="index.html">← الرئيسية</a>
+    <div class="duas-header-actions"><button class="settings-trigger" id="themeToggle" type="button">◐ الوضع الليلي</button></div>
+  </header>
+  <main class="duas-shell shell">
+    <section class="duas-intro" aria-labelledby="duasTitle">
+      <span class="eyebrow">مساحة الدعاء</span>
+      <h1 id="duasTitle">الأدعية</h1>
+      <p>اختر القسم الذي يناسبك، ثم اقرأ الدعاء على مهل مع معرفة المصدر ودرجة التوثيق.</p>
+    </section>
+    <section class="duas-categories" aria-labelledby="categoriesTitle">
+      <div class="duas-section-heading"><div><span class="focus-label">اختر ما تحتاجه</span><h2 id="categoriesTitle">أقسام الأدعية</h2></div><span id="resultsCount" class="duas-count"></span></div>
+      <div id="duaCategories" class="dua-category-buttons">
+        <button class="dua-category active" data-category="all" type="button">كل الأدعية</button>
+        <button class="dua-category" data-category="rizq" type="button">أدعية الرزق وقضاء الدين</button>
+        <button class="dua-category" data-category="distress" type="button">تفريج الكرب والهم</button>
+        <button class="dua-category" data-category="protection" type="button">العين والحسد والتحصين</button>
+        <button class="dua-category" data-category="self-dua" type="button">أدعية لنفسي</button>
+        <button class="dua-category" data-category="quranic-dua" type="button">أدعية قرآنية</button>
+      </div>
+    </section>
+    <div class="duas-search"><span aria-hidden="true">⌕</span><input id="duaSearch" type="search" placeholder="ابحث داخل الأدعية..." aria-label="بحث داخل الأدعية"></div>
+    <aside id="duaGuide" class="topic-guide" aria-live="polite"><strong>دليل الأدعية</strong><p>اختر قسمًا من الأزرار بالأعلى. تُعرض النصوص مع مصدرها ودرجة توثيقها، من غير وعود بنتيجة محددة أو إلزام بعدد غير ثابت.</p></aside>
+    <section id="duaGrid" class="dhikr-grid" aria-live="polite"></section>
+    <p id="duaEmpty" class="empty-state" hidden>لا توجد أدعية مطابقة للبحث.</p>
+  </main>
+  <dialog id="sourceDialog" class="source-dialog"><button id="closeSource" class="dialog-close" type="button" aria-label="إغلاق">×</button><div id="dialogBody"></div></dialog>
+  <footer class="duas-footer shell"><span>معجزة — الإصدار الأول v1.0.0</span><span>برمجة - Hero Digital Company</span></footer>
+  <script src="duas.js?v=20261015-duas-page-1" defer></script>
+</body>
+</html>

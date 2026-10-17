@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mo3giza.herodigitalcompany.workers.dev/sitemap.xml

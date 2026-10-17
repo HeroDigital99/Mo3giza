@@ -1,0 +1,39 @@
+.duas-page{--duas-accent:#2d806b}.duas-header{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;min-height:108px;border-bottom:1px solid var(--line);position:relative}.duas-header>.brand{grid-column:2;display:flex;justify-content:center;text-decoration:none}.duas-header .brand-wordmark img{display:block;width:clamp(145px,18vw,190px);height:auto}.duas-header .back-link{grid-column:1;justify-self:start;color:var(--teal-dark);font-size:12px;font-weight:700;text-decoration:none;padding:9px 13px;border:1px solid var(--line);border-radius:999px;background:var(--surface)}.duas-header-actions{grid-column:3;justify-self:end}.duas-header-actions .settings-trigger{font-size:11px}.duas-shell{padding-bottom:55px}.duas-intro{max-width:700px;margin:0 auto;text-align:center;padding:clamp(42px,7vw,72px) 0 34px}.duas-intro h1{font-size:clamp(36px,5vw,56px);line-height:1.2;margin:10px 0}.duas-intro p{max-width:570px;margin:0 auto;color:var(--muted);font-size:13px;line-height:2}.duas-categories{padding:22px;border:1px solid var(--line);border-radius:24px;background:var(--surface);box-shadow:var(--shadow);}.duas-section-heading{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:17px}.duas-section-heading h2{margin:5px 0 0;font-size:22px}.duas-count{color:var(--muted);font-size:11px}.dua-category-buttons{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px}.dua-category{min-height:56px;padding:10px 8px;border:1px solid var(--line);border-radius:13px;background:var(--surface-soft);color:var(--muted);font:inherit;font-size:11px;font-weight:700;line-height:1.5;cursor:pointer;transition:.2s}.dua-category:hover{border-color:var(--turquoise);color:var(--teal-dark);transform:translateY(-2px)}.dua-category.active{background:var(--teal-dark);border-color:var(--teal-dark);color:#fff;box-shadow:0 8px 18px rgba(29,89,72,.16)}.duas-search{display:flex;align-items:center;gap:8px;width:min(440px,100%);height:48px;margin:22px auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:0 14px;color:var(--teal)}.duas-search span{font-size:23px}.duas-search input{width:100%;border:0;outline:0;background:transparent;color:var(--ink);font-size:12px}.duas-page .dhikr-grid{margin-top:20px}.duas-page .dhikr-card{animation:none}.duas-footer{display:flex;justify-content:space-between;gap:15px;padding:22px 0 28px;border-top:1px solid var(--line);color:var(--muted);font-size:10px}@media(max-width:900px){.dua-category-buttons{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:600px){.duas-header{grid-template-columns:1fr auto;min-height:100px;row-gap:13px;padding:14px 0}.duas-header>.brand{grid-column:1/-1;grid-row:1}.duas-header .brand-wordmark img{width:165px}.duas-header .back-link{grid-column:1;grid-row:2;justify-self:start;font-size:11px}.duas-header-actions{grid-column:2;grid-row:2}.duas-header-actions .settings-trigger{min-height:38px;padding:7px 10px}.duas-header-actions .settings-trigger span:first-child{display:none}.duas-intro{padding:38px 0 25px}.duas-intro h1{font-size:37px}.duas-categories{padding:15px;border-radius:20px}.duas-section-heading{align-items:flex-start;flex-direction:column;gap:5px}.dua-category-buttons{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.dua-category{min-height:52px;font-size:10px;padding:8px 5px}.duas-footer{flex-wrap:wrap}.duas-footer span{width:100%;text-align:center}}
+
+@font-face{font-family:'Cairo';src:url('fonts/Cairo-400.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Tajawal';src:url('fonts/Tajawal-400.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Amiri';src:url('fonts/Amiri-400.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Noto Sans Arabic';src:url('fonts/NotoSansArabic-400.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Noto Naskh Arabic';src:url('fonts/NotoNaskhArabic-400.woff2') format('woff2');font-weight:400;font-display:swap}
+html,body,button,input,select{font-family:var(--font),sans-serif}
+body.dark .duas-categories,body.dark .duas-search,body.dark .dua-category,body.dark .duas-footer{color:#eefaf6}
+body.dark .duas-intro p,body.dark .duas-count,body.dark .duas-footer,body.dark .dua-category{color:#b8d8d1}
+body.dark .dua-category.active{color:#fff}
+
+
+@font-face{font-family:'IBM Plex Sans Arabic';src:url('fonts/IBMPlexSansArabic-400.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Readex Pro';src:url('fonts/ReadexPro-400.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Rubik';src:url('fonts/Rubik-400.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Alexandria';src:url('fonts/Alexandria-400.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Baloo Bhaijaan 2';src:url('fonts/BalooBhaijaan2-400.woff2') format('woff2');font-weight:400;font-display:swap}
+body,body[data-theme]{zoom:1!important;width:auto!important}
+.font-scale-only h1,.font-scale-only h2,.font-scale-only h3,.font-scale-only h4,.font-scale-only h5,.font-scale-only h6,.font-scale-only p,.font-scale-only small,.font-scale-only label,.font-scale-only button,.font-scale-only input,.font-scale-only select,.font-scale-only textarea,.font-scale-only a,.font-scale-only strong,.font-scale-only b{max-width:100%;overflow-wrap:anywhere;white-space:normal}
+
+/* Dua category contrast: explicit colors for both themes. */
+body:not(.dark) .dua-category{background:#e7f2ee;color:#1f5148;border-color:#bddbd2}
+body:not(.dark) .dua-category:hover{background:#d5ebe4;color:#123f38;border-color:#55a99a}
+body:not(.dark) .dua-category.active{background:#17645e;color:#fff;border-color:#17645e}
+body.dark .duas-categories{background:#182f2d;border-color:#3e665e}
+body.dark .duas-section-heading h2,body.dark .duas-section-heading .focus-label{color:#effbf7}
+body.dark .dua-category{background:#234642;color:#e8faf5;border-color:#4c7a70}
+body.dark .dua-category:hover{background:#2d5b54;color:#fff;border-color:#79cfc0}
+body.dark .dua-category.active{background:#78cfc0;color:#102f2c;border-color:#78cfc0;box-shadow:0 8px 20px rgba(0,0,0,.24)}
+body.dark .duas-search{background:#142a28;border-color:#3e665e;color:#aee7dc}
+body.dark .duas-search input{color:#effbf7}
+body.dark .duas-search input::placeholder{color:#91bcb4}
+body.dark .topic-guide{background:#203f3b;border-color:#426e65;color:#effbf7}
+body.dark .topic-guide p{color:#b8d8d1}
+body.dark .duas-footer{border-color:#3e665e;color:#b8d8d1}
+.duas-page .dua-category,.duas-page .duas-search,.duas-page .dhikr-card,.duas-page .topic-guide{transition:background-color .3s ease,color .3s ease,border-color .3s ease,box-shadow .3s ease,transform .3s cubic-bezier(.2,.8,.2,1)}
+.duas-page .dhikr-card{animation:dua-card-in .55s cubic-bezier(.2,.8,.2,1) both}
+@keyframes dua-card-in{from{opacity:0;transform:translateY(16px) scale(.985)}to{opacity:1;transform:none}}

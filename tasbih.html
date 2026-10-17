@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="معجزة"><meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#eaf6f3">
+  <meta name="description" content="سبحة إلكترونية عربية هادئة لحساب التسبيح والذكر، مع حفظ التقدم محليًا على جهازك.">
+  <title>السبحة الإلكترونية | معجزة أذكار وقرآن</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="favicon-16.png" type="image/png" sizes="16x16">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="tasbih-page.css">
+
+  <!-- SEO metadata -->
+  <link rel="canonical" href="https://mo3giza.herodigitalcompany.workers.dev/tasbih.html">
+  <meta name="version" content="v1.0.0">
+  <meta name="keywords" content="معجزة, أذكار, أذكار الصباح, أذكار المساء, قرآن, قراءة القرآن, أدعية, سبحة إلكترونية">
+  <meta property="og:locale" content="ar_AR">
+  <meta property="og:site_name" content="معجزة | أذكار وقرآن">
+  <meta property="og:title" content="السبحة الإلكترونية | معجزة أذكار وقرآن">
+  <meta property="og:description" content="سبحة إلكترونية عربية هادئة لحساب التسبيح والذكر، مع حفظ التقدم محليًا على جهازك.">
+  <meta property="og:url" content="https://mo3giza.herodigitalcompany.workers.dev/tasbih.html">
+  <meta property="og:image" content="https://mo3giza.herodigitalcompany.workers.dev/app-icon-512.png">
+  <meta property="og:image:alt" content="شعار معجزة">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="السبحة الإلكترونية | معجزة أذكار وقرآن">
+  <meta name="twitter:description" content="سبحة إلكترونية عربية هادئة لحساب التسبيح والذكر، مع حفظ التقدم محليًا على جهازك.">
+  <meta name="twitter:image" content="https://mo3giza.herodigitalcompany.workers.dev/app-icon-512.png">
+  <!-- End SEO metadata -->
+</head>
+<body data-theme="mint" data-layout="classic">
+  <header class="tasbih-header">
+    <a class="brand" href="index.html" aria-label="العودة إلى الرئيسية"><span class="brand-wordmark"><img src="logo-wordmark.png" alt="معجزة"></span></a>
+    <div class="tasbih-header-actions"><button class="settings-trigger" id="settingsToggle" type="button" aria-haspopup="dialog" aria-controls="settingsDialog"><span aria-hidden="true">⚙</span><span>الإعدادات</span></button><a class="back-link" href="index.html">العودة للأذكار ←</a></div>
+  </header>
+  <main class="tasbih-shell">
+    <section class="intro"><div class="eyebrow">السبحة</div><h1>السبحة الإلكترونية</h1><p>اختر الذكر وابدأ التسبيح.</p></section>
+    <section class="tasbih-workspace">
+      <div class="tasbih-card">
+        <div class="tasbih-top"><span class="live-dot"></span><span>عداد التسبيح</span><button id="reset" class="text-button">إعادة ضبط ↺</button></div>
+        <select id="dhikr" class="dhikr-select" aria-label="اختيار الذكر"><option>سُبْحَانَ اللَّهِ</option><option>الْحَمْدُ لِلَّهِ</option><option>اللَّهُ أَكْبَرُ</option><option>أَسْتَغْفِرُ اللَّهَ وَأَتُوبُ إِلَيْهِ</option><option>سُبْحَانَ اللَّهِ وَبِحَمْدِهِ</option><option>لَا إِلَهَ إِلَّا اللَّهُ</option><option>اللَّهُمَّ صَلِّ وَسَلِّمْ وَبَارِكْ عَلَى نَبِيِّنَا مُحَمَّدٍ ﷺ</option></select>
+        <div class="counter-area"><div class="counter-ring"><div class="counter-inner"><span id="count" aria-live="polite">0</span><small>تسبيحة</small></div></div><p id="message">عداد مستقل محفوظ على جهازك</p></div>
+        <button id="tap" class="tap-button"><span>اضغط للتسبيح</span><b>+</b></button>
+        <div class="tasbih-bottom"><button id="undo" class="secondary-button">تراجع عن آخر مرة</button><span>يمكنك الضغط على زر المسافة أيضاً</span></div>
+      </div>
+      <aside class="customizer" aria-label="تخصيص السبحة">
+        <div class="customizer-heading"><span class="spark">✧</span><div><h2>خصّص مساحتك</h2><p>الإعدادات محفوظة على هذا الجهاز.</p></div></div>
+        <fieldset><legend>التصميم</legend><div class="option-grid layouts"><button data-layout="classic" class="option active">كلاسيكي</button><button data-layout="minimal" class="option">هادئ</button><button data-layout="glass" class="option">زجاجي</button></div></fieldset>
+        <fieldset><legend>اللون</legend><div class="swatches"><button class="swatch mint active" data-theme="mint" aria-label="فيروزي"></button><button class="swatch sand" data-theme="sand" aria-label="رملي"></button><button class="swatch night" data-theme="night" aria-label="ليلي"></button><button class="swatch lavender" data-theme="lavender" aria-label="لافندر"></button></div></fieldset>
+        <label class="toggle"><input id="vibrate" type="checkbox" checked><span></span> اهتزاز خفيف عند الضغط</label>
+      </aside>
+    </section>
+    <section class="note"><strong>الذكر مش سباق</strong><p>العداد وسيلة مساعدة فقط. خذ وقتك واذكر الله بما يطمئن قلبك.</p></section>
+  </main>
+  <dialog id="settingsDialog" class="settings-dialog" aria-labelledby="settingsTitle"><button id="closeSettings" class="dialog-close" type="button" aria-label="إغلاق">×</button><div class="eyebrow">مساحتك أنت</div><h2 id="settingsTitle">إعدادات معجزة</h2><p class="settings-intro">اختياراتك محفوظة لك في الصفحة الرئيسية والسبحة.</p><div class="settings-grid"><label class="settings-field"><span>اسمك (اختياري)</span><input id="profileName" type="text" maxlength="40" placeholder="مثلاً: أحمد" autocomplete="name"></label></div><label class="settings-field full-field"><span>نوع الخط</span><select id="font" class="control-select" aria-label="اختيار الخط"><option value="Cairo">القاهرة</option><option value="Amiri">أميري</option><option value="Noto Naskh Arabic">نسخ عربي</option><option value="Noto Sans Arabic">نسخ حديث</option><option value="Tajawal">تجوال</option><option value="IBM Plex Sans Arabic">IBM Plex Sans Arabic — مودرن</option><option value="Readex Pro">Readex Pro — عصري</option><option value="Rubik">Rubik — واضح</option><option value="Alexandria">Alexandria — هندسي</option><option value="Baloo Bhaijaan 2">Baloo Bhaijaan 2 — ودود</option></select></label><label class="settings-field full-field"><span>حجم النصوص فقط <output id="sizeValue">100%</output></span><input id="fontSize" type="range" min="75" max="200" step="5" aria-label="حجم النصوص فقط"></label><button class="settings-save" id="saveSettings" type="button">حفظ الإعدادات</button></dialog>
+  <footer>برمجة - Hero Digital Company<small class="release-version">الإصدار الأول v1.0.0</small></footer>
+  <script src="tasbih.js"></script>
+  <script>if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js?v=20261015-mobile-fix-2').catch(()=>{});</script>
+</body>
+</html>

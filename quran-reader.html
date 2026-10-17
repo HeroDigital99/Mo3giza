@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#17665a">
+  <meta name="description" content="اقرأ القرآن الكريم نصيًا صفحةً بعد صفحة مع البحث وحفظ موضع القراءة، من منصة معجزة.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="favicon-16.png" type="image/png" sizes="16x16">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+  <link rel="stylesheet" href="quran-reader.css?v=20261016-quran-v1.0.1">
+  <link rel="preload" href="fonts/Cairo-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="manifest" href="manifest.webmanifest">
+  <title>قراءة القرآن الكريم | معجزة أذكار وقرآن</title>
+
+  <!-- SEO metadata -->
+  <link rel="canonical" href="https://mo3giza.herodigitalcompany.workers.dev/quran-reader.html">
+  <meta name="version" content="v1.0.0">
+  <meta name="keywords" content="معجزة, أذكار, أذكار الصباح, أذكار المساء, قرآن, قراءة القرآن, أدعية, سبحة إلكترونية">
+  <meta property="og:locale" content="ar_AR">
+  <meta property="og:site_name" content="معجزة | أذكار وقرآن">
+  <meta property="og:title" content="قراءة القرآن الكريم | معجزة أذكار وقرآن">
+  <meta property="og:description" content="اقرأ القرآن الكريم نصيًا صفحةً بعد صفحة مع البحث وحفظ موضع القراءة، من منصة معجزة.">
+  <meta property="og:url" content="https://mo3giza.herodigitalcompany.workers.dev/quran-reader.html">
+  <meta property="og:image" content="https://mo3giza.herodigitalcompany.workers.dev/app-icon-512.png">
+  <meta property="og:image:alt" content="شعار معجزة">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="قراءة القرآن الكريم | معجزة أذكار وقرآن">
+  <meta name="twitter:description" content="اقرأ القرآن الكريم نصيًا صفحةً بعد صفحة مع البحث وحفظ موضع القراءة، من منصة معجزة.">
+  <meta name="twitter:image" content="https://mo3giza.herodigitalcompany.workers.dev/app-icon-512.png">
+  <!-- End SEO metadata -->
+</head>
+<body class="quran-page">
+  <header class="reader-header">
+    <a class="reader-brand" href="index.html" aria-label="العودة إلى معجزة"><img src="logo-wordmark.png" alt="معجزة"></a>
+    <div class="reader-header-actions">
+      <span class="reader-header-mark">المصحف</span>
+      <button id="themeToggle" class="reader-theme-toggle" type="button" aria-pressed="false">☾ الوضع الليلي</button>
+      <a class="reader-home" href="index.html">العودة إلى الرئيسية</a>
+    </div>
+  </header>
+
+  <main class="reader-shell">
+    <section class="reader-intro" aria-labelledby="readerTitle">
+      <span class="reader-kicker">مُصْحَفُ مَعْجِزَة</span>
+      <h1 id="readerTitle">القرآن الكريم</h1>
+      <p>النص العثماني الموثق — صفحةً بعد صفحة.</p>
+    </section>
+
+    <section class="reader-card" aria-label="قارئ القرآن النصي">
+      <div class="reader-toolbar">
+        <div class="toolbar-title"><span class="toolbar-emblem">آ</span><div><strong>المصحف الشريف</strong><small id="pageLabel">الصفحتان ١ و٢</small></div></div>
+        <div class="toolbar-actions"><button id="fontDecrease" class="tool-button" type="button" title="تصغير الخط">A−</button><button id="fontIncrease" class="tool-button" type="button" title="تكبير الخط">A＋</button><button id="bookmarkButton" class="tool-button bookmark-button" type="button">حفظ موضع القراءة</button></div>
+      </div>
+
+      <div class="reader-controls">
+        <button id="previousPage" class="page-step" type="button" aria-label="الصفحتان السابقتان">السابق <span>→</span></button>
+        <div class="page-fields">
+          <label class="surah-field">السورة<select id="surahSelect" aria-label="انتقل إلى سورة"></select></label>
+          <label class="page-field">الصفحة<span class="page-number-wrap"><input id="pageInput" type="number" min="1" max="604" inputmode="numeric" value="1" aria-label="رقم الصفحة"><span>/ 604</span></span></label>
+        </div>
+        <button id="nextPage" class="page-step" type="button" aria-label="الصفحتان التاليتان"><span>←</span> التالي</button>
+      </div>
+
+      <div class="reader-search" role="search">
+        <input id="quranSearchInput" type="search" placeholder="ابحث في القرآن الكريم" aria-label="البحث في القرآن الكريم">
+        <button id="quranSearchButton" type="button">بحث</button><button id="quranSearchClear" class="search-clear" type="button" hidden>مسح</button>
+        <span id="quranSearchStatus" aria-live="polite"></span>
+      </div>
+      <div id="quranSearchResults" class="quran-search-results" hidden></div>
+
+      <div id="readerPages" class="reader-pages" aria-live="polite"></div>
+      <div class="reader-bookmark-row"><span id="bookmarkStatus">احفظ موضعك لتعود إليه لاحقًا</span><button id="goBookmark" class="text-action" type="button" hidden>الذهاب إلى العلامة</button></div>
+    </section>
+
+  </main>
+
+  <footer class="reader-footer"><p>اللهم اجعل القرآن ربيع قلوبنا ونور صدورنا.</p><a href="index.html">معجزة</a><span>برمجة - Hero Digital Company</span><small class="release-version">الإصدار الأول v1.0.0</small></footer>
+  <script type="module" src="quran-reader.js?v=20261016-quran-v1.0.1"></script>
+</body>
+</html>
